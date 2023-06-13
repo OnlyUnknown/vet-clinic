@@ -8,3 +8,6 @@ escape_attempts INT,
 neutered BOOL,
 weight_kg decimal
 );
+
+ALTER TABLE animals
+ADD species VARCHAR(25);
