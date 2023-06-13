@@ -208,7 +208,7 @@ Example:
 
 > Describe 1 - 3 features you will add to the project.
 
-- Will all more sql funcitons
+- Will add more sql funcitons
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
