@@ -1,17 +1,3 @@
-# curriculum-databases-projects-template
-
-> This template should be used for database related projects at Microverse.
-> Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
-
-
-## Getting Started
-
-This repository includes files with plain SQL that can be used to recreate a database:
-
-- Use [schema.sql](./schema.sql) to create all tables.
-- Use [data.sql](./data.sql) to populate tables with sample data.
-- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
-
 <a name="readme-top"></a>
 
 <!--
@@ -104,11 +90,11 @@ After you're finished please remove all the comments and instructions!
 
 > Describe between 1-3 key features of the application.
 
-- Not yet
+- Have data of animals for the vet clinic
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
+<!-- LIVE DEMO 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
@@ -117,6 +103,8 @@ After you're finished please remove all the comments and instructions!
 - [Live Demo Link](<replace-with-your-deployment-URL>)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+-->
 
 <!-- GETTING STARTED -->
 
@@ -234,7 +222,7 @@ Feel free to check the [issues page](../../issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- SUPPORT -->
+<!-- SUPPORT 
 
 ## ⭐️ Show your support <a name="support"></a>
 
@@ -243,8 +231,9 @@ Feel free to check the [issues page](../../issues/).
 If you like this project...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+-->
 
-<!-- ACKNOWLEDGEMENTS -->
+<!-- ACKNOWLEDGEMENTS
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
@@ -254,7 +243,8 @@ I would like to thank...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FAQ (optional) -->
+ -->
+<!-- FAQ (optional) 
 
 ## ❓ FAQ <a name="faq"></a>
 
@@ -269,6 +259,7 @@ I would like to thank...
   - [Answer_2]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+-->
 
 <!-- LICENSE -->
 
