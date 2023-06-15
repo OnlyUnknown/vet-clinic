@@ -11,3 +11,59 @@ INSERT INTO animals ( name, date_of_birth, escape_attempts, neutered, weight_kg)
    ('Boarmon', '2005-6-7', 7, true, 20.4),
    ('Blossom', '1998-10-13', 3, true, 17),
    ('Ditto', '2022-5-14', 4, true, 22);
+
+BEGIN;
+UPDATE animals
+SET species = 'unspecified';
+SELECT * FROM animals;
+ROLLBACK;
+
+BEGIN;
+UPDATE animals
+SET species = 'digimon'
+WHERE name like '%mon';
+SELECT * FROM animals;
+UPDATE animals
+SET species = 'pokemon'
+WHERE name NOT like '%mon';
+SELECT * FROM animals;
+COMMIT;
+
+BEGIN;
+DELETE FROM animals;
+SELECT * FROM animals;
+ROLLBACK;
+
+BEGIN;
+DELETE FROM animals
+WHERE date_of_birth > '2022-01-01';
+SELECT * FROM animals;
+SAVEPOINT WEIGHT;
+UPDATE animals
+SET weight_kg = weight_kg*-1;
+SELECT * FROM animals;
+ROLLBACK TO WEIGHT;
+UPDATE animals
+SET weight_kg = weight_kg*-1
+WHERE weight_kg < 0;
+SELECT * FROM animals;
+COMMIT;
+
+BEGIN;
+INSERT INTO owners (full_name, age)
+VALUES ('Sam Smith', 34),
+('Jennifer Orwell', 19),
+('Bob', 45),
+('Melody Pond', 77),
+('Dean Winchester', 14),
+('Jodie Whittaker', 38);
+
+INSERT INTO species (name)
+VALUES ('Pokemon'),('Digimon');
+
+END;
+
+BEGIN;
+UPDATE animals
+SET species_id = 'digimon'
+WHERE name like '%mon';
