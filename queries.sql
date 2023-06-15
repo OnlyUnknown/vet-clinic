@@ -32,10 +32,152 @@ WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-01-01'
 GROUP BY species;
 
 SELECT
-    name,
-    full_name,
-    owners_id
+    name as Melody_owns
 FROM
-    owners
+    animals
  JOIN owners
-    ON owners_id = 4;
+    ON owners.id = owners_id
+    WHERE full_name = 'Melody Pond';
+
+SELECT
+    animals.name as name,
+    species.name as species
+FROM
+    animals
+ JOIN species
+    ON species_id = 1
+    where species.name = 'Pokemon';
+
+    SELECT 
+    owners.full_name,
+    animals.name
+    from owners
+    left JOIN animals
+    ON owners.id = owners_id ;
+
+    SELECT
+    species.name
+    from species
+    left
+
+    SELECT
+     species.name as 
+species_name, COUNT(animals.id) as number_of_animals 
+FROM animals 
+JOIN species 
+ON animals.species_id = species.id
+ GROUP BY 
+species.name;
+
+SELECT 
+animals.name,
+owners.full_name
+from animals
+JOIN owners
+ON owners.id = animals.owners_id
+WHERE owners_id = 2;
+
+SELECT
+animals.name,
+owners.full_name
+from animals
+JOIN owners
+ON owners_id = 5
+where escape_attempts = 0;
+
+SELECT owners.full_name as 
+owner_name, COUNT(animals.id) as 
+number_of_animals 
+FROM animals
+JOIN owners 
+ON animals.owners_id = owners.id 
+GROUP BY owners.full_name
+ ORDER BY number_of_animals 
+ DESC LIMIT 1;
+
+
+SELECT 
+MAX(visit_date),
+animals.name
+from animals
+JOIN visits
+ON visits.animals = animals.id
+where vets = 1
+GROUP BY animals.name, visit_date
+ORDER BY visit_date
+DESC LIMIT 1;
+
+SELECT 
+COUNT(visits.animals)
+from visits
+where vets = 3;
+
+SELECT
+vets.name,
+specializations.species
+from vets
+left JOIN specializations
+ON specializations.vets = vets.id;
+
+SELECT
+name
+from animals
+JOIN visits
+ON animals.id = visits.animals
+where visits.vets = 3 AND visit_date BETWEEN '2020-04-01' AND '2020-08-30';
+
+SELECT
+COUNT(visits.animals),
+animals.name
+from visits
+JOIN animals
+ON visits.animals = animals.id
+GROUP BY visits.animals, animals.name
+ORDER BY COUNT
+DESC LIMIT 1;
+
+SELECT 
+MIN(visit_date),
+visits.animals
+from visits
+JOIN vets
+ON visits.vets = vets.id
+WHERE vets.id = 2
+GROUP BY visits.animals ,visit_date
+ORDER BY visits.visit_date
+ASC LIMIT 1;
+
+SELECT 
+visit_date,
+animals.name as animal_name,
+animals.weight_kg as animal_weight,
+vets.name as Vet_Name,
+vets.age as vet_age,
+vets.date_of_graduation as vet_graduation
+from vets
+JOIN visits 
+ON vets.id = visits.vets
+JOIN animals
+ON animals.id = visits.animals
+ORDER BY visit_date DESC LIMIT 1;
+
+SELECT
+COUNT(*)
+from animals
+ JOIN visits
+ON visits.animals = animals.id 
+FULL JOIN specializations
+ON visits.vets = specializations.vets AND visits.animals = specializations.species
+WHERE species is NULL;
+
+SELECt 
+COUNT(*),
+species.name
+FROM visits
+JOIN animals
+ON animals.id = visits.animals
+JOIN species
+ON species_id = species.id
+WHERE visits.vets = 2
+GROUP BY species.name
+ORDER BY COUNT DESC LIMIT 1;
