@@ -138,12 +138,12 @@ DESC LIMIT 1;
 
 SELECT 
 MIN(visit_date),
-visits.animals
+animals.name
 from visits
-JOIN vets
-ON visits.vets = vets.id
-WHERE vets.id = 2
-GROUP BY visits.animals ,visit_date
+JOIN animals
+ON visits.animals = animals.id
+WHERE visits.vets = 2
+GROUP BY animals.name ,visit_date
 ORDER BY visits.visit_date
 ASC LIMIT 1;
 
@@ -161,14 +161,13 @@ JOIN animals
 ON animals.id = visits.animals
 ORDER BY visit_date DESC LIMIT 1;
 
-SELECT
-COUNT(*)
-from animals
- JOIN visits
-ON visits.animals = animals.id 
-FULL JOIN specializations
-ON visits.vets = specializations.vets AND visits.animals = specializations.species
-WHERE species is NULL;
+SELECT COUNT(*) AS mismatched_visits_count
+FROM visits 
+JOIN animals ON animals.id = visits.animals
+JOIN vets ON vets.id = visits.vets
+LEFT JOIN specializations sp 
+ON vets.id = sp.vets AND animals.species_id = sp.species
+WHERE sp.species IS NULL;
 
 SELECt 
 COUNT(*),
