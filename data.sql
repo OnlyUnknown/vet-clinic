@@ -143,3 +143,33 @@ VALUES (1,1, '2020-5-24'),
 (10,1, '2021-1-11');
 
 END;
+
+BEGIN;
+INSERT INTO visits (animals, vets, visit_date) SELECT * FROM (SELECT id FROM animals) animals, (SELECT id FROM vets) vets, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+
+insert into owners (full_name, email) select 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
+
+INSERT INTO visits (animals, vets, visit_date) SELECT * FROM (SELECT id FROM animals) animals, (SELECT id FROM vets) vets, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+
+insert into owners (full_name, email) select 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
+
+INSERT INTO visits (animals, vets, visit_date) SELECT * FROM (SELECT id FROM animals) animals, (SELECT id FROM vets) vets, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+
+insert into owners (full_name, email) select 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
+
+INSERT INTO visits (animals, vets, visit_date) SELECT * FROM (SELECT id FROM animals) animals, (SELECT id FROM vets) vets, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+
+insert into owners (full_name, email) select 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
+
+INSERT INTO visits (animals, vets, visit_date) SELECT * FROM (SELECT id FROM animals) animals, (SELECT id FROM vets) vets, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+
+insert into owners (full_name, email) select 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
+
+INSERT INTO visits (animals, vets, visit_date) SELECT * FROM (SELECT id FROM animals) animals, (SELECT id FROM vets) vets, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+
+insert into owners (full_name, email) select 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
+
+END;
+
+BEGIN;
+ALTER TABLE visits ADD COLUMN visit_id INT GENERATED ALWAYS AS IDENTITY;

@@ -180,3 +180,4 @@ ON species_id = species.id
 WHERE visits.vets = 2
 GROUP BY species.name
 ORDER BY COUNT DESC LIMIT 1;
+
