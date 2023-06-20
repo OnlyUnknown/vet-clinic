@@ -77,3 +77,5 @@ CREATE INDEX vets_id_DESC ON visits(vets DESC);
 
 
 CREATE INDEX owner_id_ASC ON owners(email ASC);
+
+END;
